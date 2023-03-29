@@ -29,10 +29,10 @@ class Timer(object):
         从京东服务器获取时间毫秒
         :return:
         """
-        url = 'https://api.m.jd.com/client.action?functionId=queryMaterialProducts&client=wh5'
+        url = 'https://api.m.jd.com/client.action?functionId=queryMaterialAdverts&client=wh5'
         ret = requests.get(url).text
         js = json.loads(ret)
-        return int(js["currentTime2"])
+        return int(js["currentTimeVal"])
         # return int(round(time.time() * 1000))
 
     def local_time(self):
